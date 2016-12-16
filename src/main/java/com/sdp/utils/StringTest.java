@@ -1,7 +1,6 @@
 package com.sdp.utils;
 
 import java.io.UnsupportedEncodingException;
-import java.util.Random;
 
 /**
  * Created by Guoqing on 2016/12/14.
@@ -12,11 +11,15 @@ public class StringTest {
 
         String str = "Reed-Solomon 是个好算法！";
 
-        ReedSolomonUtil reedSolomonUtil = new ReedSolomonUtil(3, 1);
+        ReedSolomonUtil reedSolomonUtil = new ReedSolomonUtil(2, 2);
 
         String[] arrStr = reedSolomonUtil.encode(str);
-        arrStr[new Random().nextInt(arrStr.length)] = null;
+        arrStr[0] = arrStr[2];
+        arrStr[1] = arrStr[3];
+        arrStr[2] = null;
+        arrStr[3] = null;
 
-        System.out.println(reedSolomonUtil.decode(arrStr));
+        String out = reedSolomonUtil.decode(arrStr);
+        System.out.println(out + " : " + out.equals(str));
     }
 }

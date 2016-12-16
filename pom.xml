@@ -10,6 +10,7 @@
     <packaging>jar</packaging>
 
     <name>java_reed_solomon</name>
+    <url>https://github.com/martji/java-reed-solomon</url>
 
     <build>
         <plugins>
